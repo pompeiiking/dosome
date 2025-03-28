@@ -1,5 +1,10 @@
-这里讲解与记录git的使用方法和常用命令：
+ 这里讲解与记录git的使用方法和常用命令：
 1.项目的创建：
+    0.1 创建账号：
+        0.1.1 在github上创建一个账号
+        0.1.2 本地创建一个git账号：
+            git config --global user.name "用户名"
+            git config --global user.email "邮箱"
     1.1 创建一个新项目：
         1.1.1 在github上创建一个新项目
         1.1.2 在本地创建一个新项目：
@@ -9,4 +14,26 @@
             (git remote -v 查看远程仓库地址)
             git push -u origin main   //解释：即将本地项目推送到远程仓库，-u origin main表示将本地main分支推送到远程origin仓库
             (git push origin main 将本地main分支推送到远程origin仓库 没有-u是默认推送到远程仓库)
-    1.2 项目的基本操作：
+    p.s.
+        网络问题：
+            使用代理:
+                git config --global http.proxy http://127.0.0.1:7890
+                git config --global https.proxy http://127.0.0.1:7890
+            检查代理是否生效：
+                git ls-remote origin
+            取消代理：
+                git config --global --unset http.proxy
+                git config --global --unset https.proxy
+2. 项目的基本操作：
+    2.1 添加文件到暂存区：
+        git add 文件名
+    2.2 提交文件到本地仓库：
+        git commit -m "提交信息"
+    2.3 创建分支
+        git branch 分支名
+
+3. 项目的上传：
+    3.1 将本地项目推送到远程仓库：
+        git push origin 分支名
+    3.2 将远程仓库的项目拉取到本地：
+        git pull origin 分支名
