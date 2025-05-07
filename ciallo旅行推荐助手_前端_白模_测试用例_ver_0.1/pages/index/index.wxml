@@ -1,0 +1,70 @@
+<view>
+  <view>
+    <text>姓名：</text>
+    <input value="{{form.basic_info.traveler_info.name}}" bindinput="onInputName"/>
+  </view>
+  <view>
+    <text>年龄：</text>
+    <input type="number" value="{{form.basic_info.traveler_info.age}}" bindinput="onInputAge"/>
+  </view>
+  <view>
+    <text>同行人数：</text>
+    <input type="number" value="{{form.basic_info.companions.total_number}}" bindinput="onInputCompanions"/>
+  </view>
+  <view>
+    <text>出发地：</text>
+    <input value="{{form.trip_requirements.route_info.start_point}}" bindinput="onInputStartPoint"/>
+  </view>
+  <view>
+    <text>目的地：</text>
+    <input value="{{form.trip_requirements.route_info.end_point}}" bindinput="onInputEndPoint"/>
+  </view>
+  <view>
+    <text>出发日期：</text>
+    <picker mode="date" value="{{form.trip_requirements.route_info.date.start}}" bindchange="onStartDateChange">
+      <view>{{form.trip_requirements.route_info.date.start || '请选择出发日期'}}</view>
+    </picker>
+  </view>
+  <view>
+    <text>结束日期：</text>
+    <picker mode="date" value="{{form.trip_requirements.route_info.date.end}}" bindchange="onEndDateChange">
+      <view>{{form.trip_requirements.route_info.date.end || '请选择结束日期'}}</view>
+    </picker>
+  </view>
+  <view>
+    <text>兴趣：</text>
+    <checkbox-group bindchange="onCheckChange" value="{{form.preferences.travel_preferences.selected_interests}}">
+      <block wx:for="{{form.preferences.travel_preferences.available_interests}}" wx:key="index">
+        <label>
+          <checkbox value="{{item}}" />
+          <text>{{item}}</text>
+        </label>
+      </block>
+    </checkbox-group>
+  </view>
+  <view>
+    <text>节奏：</text>
+    <picker range="{{form.preferences.travel_preferences.available_pace}}" value="{{paceIndex}}" bindchange="onSelectPace">
+      <view>{{form.preferences.travel_preferences.selected_pace || '请选择'}}</view>
+    </picker>
+  </view>
+  <view>
+    <text>预算：</text>
+    <picker range="{{form.preferences.budget.available_types}}" range-key="type" value="{{budgetIndex}}" bindchange="onSelectBudget">
+      <view>{{form.preferences.budget.selected_type || '请选择'}}</view>
+    </picker>
+  </view>
+  <view>
+    <text>黑名单：</text>
+    <input value="{{form.advanced_options.blacklist}}" bindinput="onInputBlacklist"/>
+  </view>
+  <view>
+    <text>必去：</text>
+    <input value="{{form.advanced_options.must_visit}}" bindinput="onInputMustVisit"/>
+  </view>
+  <view>
+    <text>已去过：</text>
+    <input value="{{form.advanced_options.visited_places}}" bindinput="onInputVisited"/>
+  </view>
+  <button bindtap="onSubmit">提交</button>
+</view>
