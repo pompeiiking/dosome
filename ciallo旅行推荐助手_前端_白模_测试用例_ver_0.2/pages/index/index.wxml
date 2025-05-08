@@ -1,0 +1,143 @@
+<view class="container">
+  <view class="header">
+    <text class="title">Ciallo旅行助手</text>
+    <text class="subtitle">定制您的专属旅行计划</text>
+  </view>
+
+  <scroll-view scroll-y class="content">
+    <!-- 基本信息部分 -->
+    <view class="section">
+      <view class="section-title">基本信息</view>
+      <view class="form-item">
+        <text>姓名：</text>
+        <input type="text" placeholder="请输入姓名" value="{{form.basic_info.traveler_info.name}}" bindinput="onInputName" />
+      </view>
+      <view class="form-item">
+        <text>年龄：</text>
+        <input type="number" placeholder="请输入年龄" value="{{form.basic_info.traveler_info.age}}" bindinput="onInputAge" />
+      </view>
+      <view class="form-item">
+        <text>同行人数：</text>
+        <input type="number" placeholder="请输入同行人数" value="{{form.basic_info.companions.total_number}}" bindinput="onInputCompanions" />
+      </view>
+    </view>
+
+    <!-- 行程信息部分 -->
+    <view class="section">
+      <view class="section-title">行程信息</view>
+      <view class="form-item">
+        <text>出发地：</text>
+        <input type="text" placeholder="请输入出发地" value="{{form.trip_requirements.route_info.start_point}}" bindinput="onInputStartPoint" />
+      </view>
+      <view class="form-item">
+        <text>目的地：</text>
+        <input type="text" placeholder="请输入目的地" value="{{form.trip_requirements.route_info.end_point}}" bindinput="onInputEndPoint" />
+      </view>
+      <view class="form-item">
+        <text>开始日期：</text>
+        <picker mode="date" value="{{form.trip_requirements.route_info.date.start}}" bindchange="onStartDateChange">
+          <view class="picker">{{form.trip_requirements.route_info.date.start || '请选择开始日期'}}</view>
+        </picker>
+      </view>
+      <view class="form-item">
+        <text>结束日期：</text>
+        <picker mode="date" value="{{form.trip_requirements.route_info.date.end}}" bindchange="onEndDateChange">
+          <view class="picker">{{form.trip_requirements.route_info.date.end || '请选择结束日期'}}</view>
+        </picker>
+      </view>
+    </view>
+
+    <!-- 旅行偏好部分 -->
+    <view class="section">
+      <view class="section-title">旅行偏好</view>
+      <!-- 兴趣选择 -->
+      <view class="preference-section">
+        <view class="sub-title">兴趣偏好（可多选，最多{{maxInterests}}个）</view>
+        <view class="interest-list">
+          <view wx:for="{{form.preferences.travel_preferences.available_interests}}" 
+                wx:key="*this"
+                class="interest-item {{interestStates[item] ? 'selected' : ''}}"
+                data-interest="{{item}}"
+                bindtap="onSelectInterest">
+            <text>{{item}}</text>
+          </view>
+        </view>
+      </view>
+
+      <!-- 具体游玩项目（根据选择的兴趣显示对应的选项） -->
+      <block wx:for="{{form.preferences.travel_preferences.available_interests}}" wx:key="*this">
+        <view class="preference-section" wx:if="{{interestStates[item]}}">
+          <view class="sub-title">{{item}}相关偏好（可多选，最多{{maxActivities}}个）</view>
+          <view class="activity-list">
+            <view wx:for="{{form.preferences.travel_preferences.interest_features[item].available_tags}}"
+                  wx:for-item="activity"
+                  wx:key="*this"
+                  class="activity-item {{activityStates[item][activity] ? 'selected' : ''}}"
+                  data-interest="{{item}}"
+                  data-activity="{{activity}}"
+                  bindtap="onSelectActivity">
+              <text>{{activity}}</text>
+            </view>
+          </view>
+        </view>
+      </block>
+
+      <!-- 游玩节奏 -->
+      <view class="preference-section">
+        <view class="sub-title">游玩节奏</view>
+        <view class="pace-options">
+          <view class="pace-item {{form.preferences.travel_preferences.selected_pace === item ? 'selected' : ''}}"
+                wx:for="{{form.preferences.travel_preferences.available_pace}}"
+                wx:key="index"
+                bindtap="onSelectPace"
+                data-pace="{{item}}">
+            {{item}}
+          </view>
+        </view>
+      </view>
+
+      <!-- 预算选择 -->
+      <view class="preference-section">
+        <view class="sub-title">预算范围</view>
+        <view class="budget-options">
+          <view class="budget-item {{form.preferences.budget.selected_type === item.type ? 'selected' : ''}}"
+                wx:for="{{form.preferences.budget.available_types}}"
+                wx:key="type"
+                bindtap="onSelectBudget"
+                data-budget="{{item}}">
+            <view class="budget-type">{{item.type}}</view>
+            <view class="budget-range">{{item.range}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 高级选项 -->
+    <view class="section">
+      <view class="section-title">高级选项</view>
+      <view class="form-item">
+        <text>黑名单地点：</text>
+        <textarea placeholder="请输入不想去的地点，用逗号分隔" 
+                  value="{{form.advanced_options.blacklist}}" 
+                  bindinput="onInputBlacklist" />
+      </view>
+      <view class="form-item">
+        <text>必去地点：</text>
+        <textarea placeholder="请输入一定要去的地点，用逗号分隔" 
+                  value="{{form.advanced_options.must_visit}}" 
+                  bindinput="onInputMustVisit" />
+      </view>
+      <view class="form-item">
+        <text>已去过的地方：</text>
+        <textarea placeholder="请输入已经去过的地方，用逗号分隔" 
+                  value="{{form.advanced_options.visited_places}}" 
+                  bindinput="onInputVisited" />
+      </view>
+    </view>
+  </scroll-view>
+
+  <!-- 提交按钮 -->
+  <view class="submit-section">
+    <button class="submit-btn" bindtap="submitPreferences">生成旅行计划</button>
+  </view>
+</view>
