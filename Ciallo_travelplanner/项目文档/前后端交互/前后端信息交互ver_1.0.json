@@ -1,0 +1,166 @@
+{
+    "basic_info": {
+        "traveler_info": {
+            "name": "",
+            "age": ""
+        },
+        "companions": {
+            "total_number": 0
+        }
+    },
+    "trip_requirements": {
+        "route_info": {
+            "start_point": "",
+            "end_point": "",
+            "date": {
+                "start": "",
+                "end": ""
+            }
+        }
+    },
+    "preferences": {
+        "travel_preferences": {
+            "selected_interests": "",
+            "available_interests": [
+                "自然风光",
+                "历史人文",
+                "美食探店",
+                "亲子乐园",
+                "冒险运动",
+                "摄影打卡",
+                "购物休闲",
+                "小众体验"
+            ],
+            "selected_pace": "",
+            "available_pace": ["暴走打卡", "悠闲放松", "混合"],
+            "interest_features": {
+                "自然风光": {
+                    "selected_tags": "",
+                    "available_tags": [
+                        "山水景观",
+                        "森林氧吧",
+                        "湖泊河流",
+                        "海洋沙滩",
+                        "草原牧场",
+                        "峡谷地貌",
+                        "瀑布温泉",
+                        "观景平台"
+                    ]
+                },
+                "历史人文": {
+                    "selected_tags": "",
+                    "available_tags": [
+                        "历史古迹",
+                        "博物馆",
+                        "宗教场所",
+                        "文化街区",
+                        "传统村落",
+                        "名人故居",
+                        "考古遗址",
+                        "文化展馆"
+                    ]
+                },
+                "美食探店": {
+                    "selected_tags": "",
+                    "available_tags": [
+                        "特色小吃",
+                        "地方菜系",
+                        "网红餐厅",
+                        "夜市美食",
+                        "农家乐",
+                        "美食街",
+                        "特色饮品",
+                        "传统糕点"
+                    ]
+                },
+                "亲子乐园": {
+                    "selected_tags": "",
+                    "available_tags": [
+                        "主题乐园",
+                        "动物园",
+                        "水族馆",
+                        "科技馆",
+                        "儿童剧场",
+                        "亲子农场",
+                        "科普教育",
+                        "互动体验"
+                    ]
+                },
+                "冒险运动": {
+                    "selected_tags": "",
+                    "available_tags": [
+                        "漂流",
+                        "攀岩",
+                        "滑翔伞",
+                        "潜水",
+                        "滑雪",
+                        "徒步",
+                        "骑行",
+                        "极限运动"
+                    ]
+                },
+                "摄影打卡": {
+                    "selected_tags": "",
+                    "available_tags": [
+                        "网红景点",
+                        "观景台",
+                        "特色建筑",
+                        "自然景观",
+                        "人文景观",
+                        "夜景",
+                        "日出日落",
+                        "特色街区"
+                    ]
+                },
+                "购物休闲": {
+                    "selected_tags": "",
+                    "available_tags": [
+                        "购物中心",
+                        "特色市场",
+                        "免税店",
+                        "文创街区",
+                        "休闲广场",
+                        "特色商店",
+                        "手工艺品",
+                        "特产购物"
+                    ]
+                },
+                "小众体验": {
+                    "selected_tags": "",
+                    "available_tags": [
+                        "当地市集",
+                        "手工艺坊",
+                        "特色民宿",
+                        "文化工作坊",
+                        "社区探索",
+                        "特色体验",
+                        "艺术空间",
+                        "创意园区"
+                    ]
+                }
+            }
+        },
+        "budget": {
+            "selected_type": "",
+            "available_types": [
+                {
+                    "type": "经济型",
+                    "range": "500元/天内"
+                },
+                {
+                    "type": "舒适型",
+                    "range": "500-1000元/天"
+                },
+                {
+                    "type": "高端",
+                    "range": "1000元+/天"
+                }
+            ]
+        }
+    },
+    "advanced_options": {
+        "blacklist": "",
+        "must_visit": "",
+        "visited_places": ""
+    }
+} 

@@ -1,0 +1,19 @@
+变量命名总览：
+
+
+
+数据库命名：
+
+| 中文 | 英文变量名 |
+|--------------|----------------------|
+| 景点 | attraction |
+| 景点属性 | attraction_attributes |
+| 最佳日期 | best_date |
+| 兴趣点 | travel_preferences |
+| 体验节奏 | experience_pace |
+| 周边景点 | nearby_attractions |
+| 游玩项目 | activity |
+| 项目属性 | activity_attributes|
+| 游玩开销 | activity_cost |
+| [特殊点]() | advanced_options |
+
