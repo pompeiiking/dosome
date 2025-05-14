@@ -1,0 +1,12 @@
+{
+  "pages": [
+    "pages/index/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#f6f8fa",
+    "navigationBarTitleText": "Ciallo旅行助手",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
+  }
+}
