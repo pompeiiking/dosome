@@ -1,0 +1,16 @@
+<view class="card-options-group">
+  <block wx:if="{{interestFeatures[interestKey]}}">
+    <block wx:for="{{interestFeatures[interestKey].available_tags}}" wx:for-item="tag" wx:key="tag">
+      <view class="card-option{{interestFeatures[interestKey].selected_status && interestFeatures[interestKey].selected_status[tag] === 'selected' ? ' selected' : ''}}"
+            data-activity="{{tag}}"
+            bindtap="onSelect">
+        <text>{{tag}}</text>
+        <block wx:if="{{interestFeatures[interestKey].selected_status && interestFeatures[interestKey].selected_status[tag] === 'selected'}}">
+          <view class="order-badge">
+            {{interestFeatures[interestKey].order_map && interestFeatures[interestKey].order_map[tag] ? interestFeatures[interestKey].order_map[tag] : ''}}
+          </view>
+        </block>
+      </view>
+    </block>
+  </block>
+</view> 

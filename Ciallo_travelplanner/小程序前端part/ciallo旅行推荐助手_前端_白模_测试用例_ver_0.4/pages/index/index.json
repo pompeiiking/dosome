@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "interest-selector": "./InterestSelector",
+    "activity-selector": "./ActivitySelector"
+  }
+}

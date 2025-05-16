@@ -1,0 +1,222 @@
+<!-- 顶部吸附栏，绝对定位，初始透明，欢迎页消失后渐显 -->
+<view class="fixed-header" style="opacity: {{headerOpacity}}; transition: opacity 0.3s;">
+  <image src="/assets/icons/20b1a4d10534ab87f1e6d4db9b5909c.jpg" class="header-img" mode="aspectFit" />
+  <view class="header-title-box">
+    <text class="header-title">Ciallo旅行助手</text>
+    <text class="header-subtitle">定制您的专属旅行计划</text>
+  </view>
+</view>
+
+<view wx:if="{{showWelcome}}" class="welcome-layer"
+      style="background: {{bgColor}}; opacity: {{welcomeOpacity}}; transition: opacity 0.3s;"
+      bind:touchstart="onTouchStart"
+      bind:touchmove="onTouchMove"
+      bind:touchend="onTouchEnd">
+  <view class="welcome-top" style="margin-top: {{imgTop}}rpx; transition: margin-top 0.2s;">
+    <image src="/assets/icons/20b1a4d10534ab87f1e6d4db9b5909c.jpg" class="welcome-illustration"
+      mode="aspectFit"
+      style="transform: scale({{imgScale}}); transition: transform 0.2s;" />
+  </view>
+  <view class="welcome-content"
+        style="transform: translateY({{contentTranslateY}}rpx); transition: transform 0.2s;">
+    <view class="welcome-title">欢迎来到 Ciallo 旅行推荐助手</view>
+    <view class="welcome-desc">智能定制你的专属旅行计划，发现世界的美好！</view>
+    <view class="swipe-tip">向上滑动开始</view>
+  </view>
+  <view class="welcome-footer">
+    <image src="/assets/icons/飞机_airplane.svg" class="footer-icon" mode="aspectFit" />
+  </view>
+  </view>
+
+<!-- 主内容整体包裹 -->
+<view class="main-content">
+  <view class="container">
+  <!-- 分步进度条 -->
+  <view class="step-progress">
+    <view class="step-item {{currentStep === 1 ? 'active' : ''}}">1 基本信息</view>
+    <view class="step-line"></view>
+    <view class="step-item {{currentStep === 2 ? 'active' : ''}}">2 行程信息</view>
+    <view class="step-line"></view>
+    <view class="step-item {{currentStep === 3 ? 'active' : ''}}">3 旅行偏好</view>
+    <view class="step-line"></view>
+    <view class="step-item {{currentStep === 4 ? 'active' : ''}}">4 高级选项</view>
+    <view class="step-line"></view>
+    <view class="step-item {{currentStep === 5 ? 'active' : ''}}">5 确认提交</view>
+  </view>
+    <scroll-view scroll-y class="content" style="height: calc(100vh - 220rpx - 120rpx);">
+    <!-- 步骤1：基本信息 -->
+    <view wx:if="{{currentStep === 1}}" class="section">
+      <view class="section-title"><image src="/assets/icons/国际化_international.svg" class="section-icon" />基本信息</view>
+      <view class="form-item-group">
+        <view class="form-item">
+          <text>姓名：</text>
+          <input type="text" placeholder="请输入姓名" value="{{form.basic_info.traveler_info.name}}" bindinput="onNameInput" />
+        </view>
+        <view class="form-item">
+          <text>年龄：</text>
+          <input type="number" placeholder="请输入年龄" value="{{form.basic_info.traveler_info.age}}" bindinput="onAgeInput" />
+        </view>
+        <view class="form-item">
+          <text>同行人数：</text>
+          <input type="number" placeholder="请输入同行人数" value="{{form.basic_info.companions.total_number}}" bindinput="onInputCompanions" />
+        </view>
+      </view>
+    </view>
+    <!-- 步骤2：行程信息 -->
+    <view wx:if="{{currentStep === 2}}" class="section">
+      <view class="section-title"><image src="/assets/icons/地图_map-draw.svg" class="section-icon" />行程信息</view>
+      <view class="form-item-group">
+        <view class="form-item">
+          <text>出发地：</text>
+          <input type="text" placeholder="请输入出发地" value="{{form.trip_requirements.route_info.start_point}}" bindinput="onStartPointInput" />
+        </view>
+        <view class="form-item">
+          <text>目的地：</text>
+          <input type="text" placeholder="请输入目的地" value="{{form.trip_requirements.route_info.end_point}}" bindinput="onEndPointInput" />
+        </view>
+        <view class="form-item">
+          <text>开始日期：</text>
+          <picker mode="date" value="{{form.trip_requirements.route_info.date.start}}" bindchange="onStartDateChange">
+            <view class="picker">{{form.trip_requirements.route_info.date.start || '请选择开始日期'}}</view>
+          </picker>
+        </view>
+        <view class="form-item">
+          <text>结束日期：</text>
+          <picker mode="date" value="{{form.trip_requirements.route_info.date.end}}" bindchange="onEndDateChange">
+            <view class="picker">{{form.trip_requirements.route_info.date.end || '请选择结束日期'}}</view>
+          </picker>
+        </view>
+      </view>
+    </view>
+    <!-- 步骤3：旅行偏好（多选卡片+icon+动效） -->
+    <view wx:if="{{currentStep === 3}}" class="section">
+      <view class="section-title"><image src="/assets/icons/书籍_book.svg" class="section-icon" />旅行偏好</view>
+      <!-- 新增：旅行节奏分组 -->
+      <view class="preference-group">
+        <view class="group-title">旅行节奏</view>
+        <view class="pace-options">
+          <block wx:for="{{form.preferences.travel_preferences.available_pace}}" wx:key="pace">
+            <view class="pace-item {{form.preferences.travel_preferences.selected_pace === item ? 'selected' : ''}}" bindtap="onSelectPace" data-pace="{{item}}">
+              <text>{{item}}</text>
+            </view>
+          </block>
+        </view>
+      </view>
+      <!-- 新增：预算类型分组 -->
+      <view class="preference-group">
+        <view class="group-title">预算类型</view>
+        <view class="budget-options">
+          <block wx:for="{{form.preferences.travel_preferences.budget.available_types}}" wx:key="type">
+            <view class="budget-item {{form.preferences.budget.selected_type === item.type ? 'selected' : ''}}" bindtap="onSelectBudget" data-budget="{{item}}">
+              <view class="budget-type">{{item.type}}</view>
+              <view class="budget-range">{{item.range}}</view>
+            </view>
+          </block>
+        </view>
+      </view>
+      <!-- 新增副标题：旅行偏好 -->
+      <view class="group-title sub-title">旅行偏好</view>
+      <view class="card-options-group">
+        <block wx:for="{{preferenceOptions}}" wx:key="index">
+          <view class="card-option {{item.selected ? 'selected' : ''}}" bindtap="onSelectPreference" data-index="{{index}}">
+            <image src="{{item.icon}}" class="card-option-icon" />
+            <text>{{item.label}}</text>
+          </view>
+        </block>
+      </view>
+      <!-- 兴趣选择组件 -->
+      <interest-selector
+        interest-features="{{form.preferences.travel_preferences.interest_features}}"
+        selected-interests="{{form.preferences.travel_preferences.selected_interests}}"
+        max-interests="{{maxInterests}}"
+        bind:selectInterest="onSelectInterest"
+      />
+      <!-- 动态次级选项区：多兴趣分组（活动选择组件） -->
+      <view class="sub-options-group" wx:if="{{form.preferences.travel_preferences.selected_interests.length}}">
+        <block wx:for="{{form.preferences.travel_preferences.selected_interests}}" wx:key="interest">
+          <view class="sub-options-title">{{item}}相关活动</view>
+          <activity-selector
+            interest-key="{{item}}"
+            interest-features="{{form.preferences.travel_preferences.interest_features}}"
+            bind:selectActivity="onSelectActivity"
+          />
+        </block>
+      </view>
+    </view>
+    <!-- 步骤4：高级选项 -->
+    <view wx:if="{{currentStep === 4}}" class="section">
+      <view class="section-title"><image src="/assets/icons/应用菜单_application-menu.svg" class="section-icon" />高级选项</view>
+      <view class="form-item-group">
+        <view class="form-item">
+          <text>黑名单地点：</text>
+          <textarea placeholder="请输入不想去的地点，用逗号分隔" 
+                    value="{{form.advanced_options.blacklist}}" 
+                    bindinput="onInputBlacklist" />
+        </view>
+        <view class="form-item">
+          <text>必去地点：</text>
+          <textarea placeholder="请输入一定要去的地点，用逗号分隔" 
+                    value="{{form.advanced_options.must_visit}}" 
+                    bindinput="onInputMustVisit" />
+        </view>
+        <view class="form-item">
+          <text>已去过的地方：</text>
+          <textarea placeholder="请输入已经去过的地方，用逗号分隔" 
+                    value="{{form.advanced_options.visited_places}}" 
+                    bindinput="onInputVisited" />
+        </view>
+      </view>
+    </view>
+    <!-- 步骤5：确认提交 -->
+    <view wx:if="{{currentStep === 5}}" class="section">
+      <view class="section-title"><image src="/assets/icons/对勾_check-correct.svg" class="section-icon" />确认提交</view>
+      <view class="form-item-group">
+        <text>请确认您的信息无误后提交。</text>
+      </view>
+      <!-- 新增：用户输入内容预览 -->
+      <view class="confirm-preview">
+        <view class="preview-group">
+          <view class="preview-title">基本信息</view>
+          <view class="preview-item">姓名：{{form.basic_info.traveler_info.name}}</view>
+          <view class="preview-item">年龄：{{form.basic_info.traveler_info.age}}</view>
+          <view class="preview-item">同行人数：{{form.basic_info.companions.total_number}}</view>
+        </view>
+        <view class="preview-group">
+          <view class="preview-title">行程信息</view>
+          <view class="preview-item">出发地：{{form.trip_requirements.route_info.start_point}}</view>
+          <view class="preview-item">目的地：{{form.trip_requirements.route_info.end_point}}</view>
+          <view class="preview-item">开始日期：{{form.trip_requirements.route_info.date.start}}</view>
+          <view class="preview-item">结束日期：{{form.trip_requirements.route_info.date.end}}</view>
+        </view>
+        <view class="preview-group">
+          <view class="preview-title">旅行偏好</view>
+          <view class="preview-item">兴趣：{{form.preferences.travel_preferences.selected_interests.join('，')}}</view>
+          <view class="preview-item">节奏：{{form.preferences.travel_preferences.selected_pace}}</view>
+          <view class="preview-item">预算：{{form.preferences.budget.selected_type}}</view>
+        </view>
+        <view class="preview-group">
+          <view class="preview-title">高级选项</view>
+          <view class="preview-item">黑名单地点：{{form.advanced_options.blacklist}}</view>
+          <view class="preview-item">必去地点：{{form.advanced_options.must_visit}}</view>
+          <view class="preview-item">已去过的地方：{{form.advanced_options.visited_places}}</view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+
+  <!-- 底部操作区：渐变按钮+icon -->
+    <view wx:if="{{!showWelcome}}">
+  <view class="step-btns">
+    <button class="step-btn prev-btn" wx:if="{{currentStep > 1}}" bindtap="onPrevStep">
+      <image src="/assets/icons/左-箭头_arrow-circle-left.svg" class="btn-icon" />上一步
+    </button>
+    <button class="step-btn next-btn" wx:if="{{currentStep < 5}}" bindtap="onNextStep">
+      下一步<image src="/assets/icons/右-箭头_arrow-circle-right.svg" class="btn-icon" />
+    </button>
+    <button class="step-btn submit-btn" wx:if="{{currentStep === 5}}" bindtap="submitPreferences">
+      <image src="/assets/icons/对勾_check-correct.svg" class="btn-icon" />提交
+    </button>
+      </view>
+    </view>
+  </view>
+</view>
