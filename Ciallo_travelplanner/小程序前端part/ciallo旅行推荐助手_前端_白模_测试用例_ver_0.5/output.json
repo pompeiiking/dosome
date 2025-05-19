@@ -1,0 +1,167 @@
+{
+  "paths": [
+    {
+      "path_name": "综合得分最高的路径",
+      "stops": [
+        {
+          "attraction": "奥林匹克公园",
+          "best_visit_date": "全年",
+          "recommended_preference": "现代地标/运动",
+          "play_rhythm": "活力早晨",
+          "play_items": [
+            { "name": "徒步/骑行景观大道", "category": "户外运动", "cost": 0.0 },
+            { "name": "参观奥林匹克塔", "category": "观景打卡", "cost": 70.0 }
+          ]
+        },
+        {
+          "attraction": "鸟巢",
+          "best_visit_date": "全年",
+          "recommended_preference": "地标打卡",
+          "play_rhythm": "上午",
+          "play_items": [
+            { "name": "参观鸟巢内部场馆", "category": "体育文化", "cost": 40.0 }
+          ]
+        },
+        {
+          "attraction": "水立方",
+          "best_visit_date": "全年",
+          "recommended_preference": "休闲娱乐",
+          "play_rhythm": "午后",
+          "play_items": [
+            { "name": "水立方嬉水乐园游玩", "category": "休闲娱乐", "cost": 218.0 }
+          ]
+        },
+        {
+          "attraction": "颐和园",
+          "best_visit_date": "春秋",
+          "recommended_preference": "历史人文/自然风光",
+          "play_rhythm": "傍晚",
+          "play_items": [
+            { "name": "昆明湖泛舟", "category": "自然风光", "cost": 60.0 },
+            { "name": "长廊漫步", "category": "历史文化", "cost": 0.0 }
+          ]
+        }
+      ],
+      "total_distance": 18.0,
+      "total_cost": 388.0,
+      "distance_score": 0.7,
+      "cost_score": 0.7,
+      "preference_score": 0.9,
+      "total_score": 1.0
+    },
+    {
+      "path_name": "距离得分最高的路径",
+      "stops": [
+        {
+          "attraction": "天安门",
+          "best_visit_date": "全年",
+          "recommended_preference": "历史地标",
+          "play_rhythm": "上午",
+          "play_items": [
+            { "name": "升旗仪式观礼", "category": "历史文化", "cost": 0.0 }
+          ]
+        },
+        {
+          "attraction": "故宫",
+          "best_visit_date": "全年",
+          "recommended_preference": "文化遗产",
+          "play_rhythm": "上午",
+          "play_items": [
+            { "name": "参观故宫博物院", "category": "历史文化", "cost": 60.0 }
+          ]
+        },
+        {
+          "attraction": "王府井",
+          "best_visit_date": "全年",
+          "recommended_preference": "购物美食",
+          "play_rhythm": "午后",
+          "play_items": [
+            { "name": "王府井步行街美食打卡", "category": "美食购物", "cost": 80.0 }
+          ]
+        }
+      ],
+      "total_distance": 3.0,
+      "total_cost": 140.0,
+      "distance_score": 1.0,
+      "cost_score": 0.8,
+      "preference_score": 0.7,
+      "total_score": 0.9
+    },
+    {
+      "path_name": "花费得分最高的路径",
+      "stops": [
+        {
+          "attraction": "北海公园",
+          "best_visit_date": "春夏秋",
+          "recommended_preference": "自然风光",
+          "play_rhythm": "上午",
+          "play_items": [
+            { "name": "公园漫步", "category": "自然风光", "cost": 10.0 }
+          ]
+        },
+        {
+          "attraction": "南锣鼓巷",
+          "best_visit_date": "全年",
+          "recommended_preference": "文艺小众",
+          "play_rhythm": "午后",
+          "play_items": [
+            { "name": "胡同探访", "category": "文化体验", "cost": 0.0 }
+          ]
+        },
+        {
+          "attraction": "什刹海",
+          "best_visit_date": "夏秋",
+          "recommended_preference": "休闲娱乐",
+          "play_rhythm": "傍晚",
+          "play_items": [
+            { "name": "湖边骑行", "category": "休闲娱乐", "cost": 20.0 }
+          ]
+        }
+      ],
+      "total_distance": 5.0,
+      "total_cost": 30.0,
+      "distance_score": 0.8,
+      "cost_score": 1.0,
+      "preference_score": 0.6,
+      "total_score": 0.85
+    },
+    {
+      "path_name": "属性得分最高的路径",
+      "stops": [
+        {
+          "attraction": "北京动物园",
+          "best_visit_date": "春秋",
+          "recommended_preference": "亲子/动物",
+          "play_rhythm": "上午",
+          "play_items": [
+            { "name": "熊猫馆参观", "category": "亲子互动", "cost": 20.0 }
+          ]
+        },
+        {
+          "attraction": "中国科技馆",
+          "best_visit_date": "全年",
+          "recommended_preference": "科普/亲子",
+          "play_rhythm": "午后",
+          "play_items": [
+            { "name": "科学实验体验", "category": "科普教育", "cost": 30.0 }
+          ]
+        },
+        {
+          "attraction": "欢乐谷",
+          "best_visit_date": "夏季",
+          "recommended_preference": "娱乐/亲子",
+          "play_rhythm": "傍晚",
+          "play_items": [
+            { "name": "过山车体验", "category": "游乐项目", "cost": 120.0 }
+          ]
+        }
+      ],
+      "total_distance": 15.0,
+      "total_cost": 170.0,
+      "distance_score": 0.6,
+      "cost_score": 0.7,
+      "preference_score": 1.0,
+      "total_score": 0.92
+    }
+  ]
+}
