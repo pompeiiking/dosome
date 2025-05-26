@@ -1,0 +1,62 @@
+<view class="overview-bg">
+  <!-- 顶部问候区 -->
+  <view class="greeting-area">
+    <view class="greeting-main">Good morning,</view>
+    <view class="greeting-sub">{{user.name}}</view>
+  </view>
+  <!-- 主卡片区（蓝色卡片+浅蓝遮挡卡片） -->
+  <view class="main-card-wrap">
+    <view class="main-card" style="width: 649rpx; height: 299rpx; display: flex; box-sizing: border-box; left: 0rpx; top: 39rpx; position: relative">
+      <view class="main-card-top">
+        <view class="main-card-from">From
+          <text class="main-card-city">{{mainPath.stops[0].attraction}}</text>
+        </view>
+        <image style="position: relative; left: -41rpx; top: 1rpx" class="main-card-plane" src="/assets/icons/飞机_airplane.svg" />
+        <view class="main-card-to">To
+          <text class="main-card-city">{{mainPath.stops[mainPath.stops.length-1].attraction}}</text>
+        </view>
+      </view>
+    </view>
+    <!-- 浅蓝色遮挡卡片 -->
+    <view class="main-card-overlay" style="position: absolute; left: 375rpx; top: 173rpx; width: 537rpx; height: 218rpx; display: flex; box-sizing: border-box">
+      <view class="overlay-left">
+        <view class="overlay-dest">{{mainPath.stops[mainPath.stops.length-1].attraction}}</view>
+        <view class="overlay-country">中国</view>
+      </view>
+      <view class="overlay-divider"></view>
+      <view class="overlay-desc">{{mainPath.path_name}}</view>
+      <view class="overlay-btn" data-idx="0" bindtap="goToMap">查看详情</view>
+    </view>
+  </view>
+  <!-- 用户卡片区 -->
+  <view class="user-card">
+    <image style="position: relative; left: 24rpx; top: 206rpx" class="avatar" src="{{user.avatar}}" />
+    <view class="user-meta">
+      <view class="user-nickname" style="position: relative; left: 0rpx; top: 210rpx">{{user.name}}</view>
+      <view class="user-tag" style="position: relative; left: 0rpx; top: 208rpx; height: 39rpx; display: block; box-sizing: border-box">Premium user</view>
+    </view>
+  </view>
+  <!-- 其余路径卡片区 -->
+  <view class="other-list" style="position: relative; left: 2rpx; top: -133rpx; height: 14rpx; display: block; box-sizing: border-box">
+    <block wx:for="{{otherPaths}}" wx:key="path_name">
+      
+<view class="other-card" style="position: relative; left: 0rpx; top: 439rpx">
+        <image class="other-card-img" src="/assets/icons/20b1a4d10534ab87f1e6d4db9b5909c.jpg" />
+        <view class="other-card-info">
+          <view class="other-card-title">{{item.stops[item.stops.length-1].attraction}}</view>
+          <view class="other-card-country">{{item.path_name}}</view>
+          <view class="other-card-score">
+            <image class="star" src="/assets/icons/对勾_check-correct.svg" />
+            {{item.total_score}}
+          </view>
+        </view>
+        <view class="other-card-btn" data-idx="{{index+1}}" bindtap="goToMap">查看详情</view>
+      </view>
+
+    </block>
+  </view>
+  <!-- 右下角悬浮返回首页按钮 -->
+  <view class="fixed-home-btn" bindtap="goHome">
+    <image src="/assets/icons/应用菜单_application-menu.svg" class="home-icon"/>
+  </view>
+</view> 

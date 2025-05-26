@@ -1,0 +1,76 @@
+<!-- 顶部返回按钮，绝对定位 -->
+<view class="fixed-back-btn" bindtap="goBack">
+  <image src="/assets/icons/左-箭头_arrow-circle-left.svg" class="back-icon"/>
+</view>
+
+<!-- 顶部导航栏 -->
+<view class="nav-bar">
+  <text class="nav-title">推荐详情</text>
+</view>
+
+<!-- 地图卡片区域 -->
+<view class="map-card">
+  <map
+    longitude="{{centerLng}}"
+    latitude="{{centerLat}}"
+    scale="{{mapScale}}"
+    markers="{{markers}}"
+    polylines="{{polylines}}"
+    bindmarkertap="onMarkerTap"
+    class="mini-map"
+    show-location
+  />
+</view>
+
+<!-- 路径摘要卡片 -->
+<view class="summary-card">
+  <text class="path-title">{{paths[currentPathIndex].path_name || ''}}</text>
+  <view class="score-row">
+    <text class="score-label">总得分</text>
+    <text class="score-value">{{paths[currentPathIndex].total_score || ''}}</text>
+    <text class="score-label">总距离</text>
+    <text class="score-value">{{paths[currentPathIndex].total_distance || ''}} km</text>
+    <text class="score-label">总花费</text>
+    <text class="score-value">￥{{paths[currentPathIndex].total_cost || ''}}</text>
+  </view>
+</view>
+
+<!-- 景点详情卡片列表 -->
+<view class="stops-list">
+  <block wx:for="{{paths[currentPathIndex].stops}}" wx:key="index">
+    <view class="stop-card">
+      <view class="stop-header">
+        <text class="stop-name">{{item.attraction || ''}}</text>
+        <text class="stop-rhythm">{{item.play_rhythm || ''}}</text>
+      </view>
+      <text class="stop-reason">推荐理由：{{item.recommended_preference || ''}}</text>
+      <view class="play-items">
+        <block wx:for="{{item.play_items}}" wx:key="name" wx:for-item="play">
+          <view class="play-item">
+            <text class="play-name">{{play.name || ''}}</text>
+            <text class="play-category">{{play.category || ''}}</text>
+            <text class="play-cost">￥{{play.cost || ''}}</text>
+          </view>
+        </block>
+      </view>
+      <text class="best-date">最佳游玩时间：{{item.best_visit_date || ''}}</text>
+    </view>
+  </block>
+</view>
+
+<!-- marker弹窗 -->
+<view wx:if="{{showPopup}}" class="marker-popup">
+  <view class="popup-card">
+    <text class="popup-title">{{popupData.attraction || ''}}</text>
+    <text class="popup-reason">推荐理由：{{popupData.recommended_preference || ''}}</text>
+    <text class="popup-rhythm">节奏：{{popupData.play_rhythm || ''}}</text>
+    <text class="popup-date">最佳时间：{{popupData.best_visit_date || ''}}</text>
+    <view class="popup-activities">
+      <text class="popup-activity-title">推荐活动：</text>
+      <block wx:for="{{popupData.play_items}}" wx:key="name" wx:for-item="play">
+        <view class="popup-activity-item">{{play.name || ''}}（{{play.category || ''}}，￥{{play.cost || ''}}）</view>
+      </block>
+    </view>
+    <button class="close-popup" bindtap="closePopup">关闭</button>
+  </view>
+</view> 

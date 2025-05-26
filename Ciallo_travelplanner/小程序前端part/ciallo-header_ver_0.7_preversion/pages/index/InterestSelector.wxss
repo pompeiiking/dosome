@@ -1,0 +1,28 @@
+.card-options-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20rpx;
+  padding: 10rpx;
+}
+.card-option {
+  position: relative;
+  padding: 24rpx;
+  background: #f5f7fa;
+  border-radius: 12rpx;
+  text-align: center;
+  font-size: 28rpx;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1rpx solid #eee;
+  width: calc(33.33% - 14rpx);
+  box-sizing: border-box;
+}
+.card-option.selected {
+  background: #1890ff;
+  color: #fff;
+  border-color: #1890ff;
+  transform: scale(1.02);
+  box-shadow: 0 6rpx 24rpx rgba(24,144,255,0.10);
+} 

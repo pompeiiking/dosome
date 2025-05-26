@@ -1,0 +1,9 @@
+<view class="card-options-group">
+  <block wx:for="{{Object.keys(interestFeatures)}}" wx:key="interest">
+    <view class="card-option {{selectedInterests.indexOf(item) !== -1 ? 'selected' : ''}}"
+          data-interest="{{item}}"
+          bindtap="onSelect">
+      <text>{{item}}</text>
+    </view>
+  </block>
+</view> 

@@ -1,0 +1,45 @@
+/* 全局字体与背景 */
+page, body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  background: #f6f8fa;
+  color: #222;
+}
+
+/* 滚动条美化 */
+::-webkit-scrollbar {
+  width: 8rpx;
+  background: #f0f0f0;
+}
+::-webkit-scrollbar-thumb {
+  background: #e0e0e0;
+  border-radius: 8rpx;
+}
+
+/* 按钮基础样式优化 */
+button {
+  font-family: inherit;
+  font-size: 30rpx;
+  border: none;
+  outline: none;
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2rpx 8rpx rgba(24,144,255,0.08);
+}
+button:active {
+  opacity: 0.85;
+}
+
+/* 输入框基础样式优化 */
+input, textarea {
+  font-family: inherit;
+  font-size: 28rpx;
+  color: #222;
+  background: #f8f8f8;
+  border-radius: 8rpx;
+  border: 1rpx solid #e0e0e0;
+  padding: 18rpx 20rpx;
+  transition: border 0.2s;
+}
+input:focus, textarea:focus {
+  border-color: #1890ff;
+  background: #f0f7ff;
+}
