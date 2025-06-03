@@ -1,0 +1,515 @@
+{
+    "RECORDS": [
+        {
+            "id": "1",
+            "activity_name": "山水徒步",
+            "activity_attributes": "山水景观",
+            "activity_cost": "80.00",
+            "advanced_options": "专业向导"
+        },
+        {
+            "id": "2",
+            "activity_name": "森林探秘",
+            "activity_attributes": "森林氧吧",
+            "activity_cost": "90.00",
+            "advanced_options": "望远镜租赁"
+        },
+        {
+            "id": "3",
+            "activity_name": "湖泊泛舟",
+            "activity_attributes": "湖泊河流",
+            "activity_cost": "70.00",
+            "advanced_options": "下午茶"
+        },
+        {
+            "id": "4",
+            "activity_name": "海滩露营",
+            "activity_attributes": "海洋沙滩",
+            "activity_cost": "120.00",
+            "advanced_options": "帐篷租赁"
+        },
+        {
+            "id": "5",
+            "activity_name": "草原骑行",
+            "activity_attributes": "草原牧场",
+            "activity_cost": "100.00",
+            "advanced_options": "马术课程"
+        },
+        {
+            "id": "6",
+            "activity_name": "峡谷探险",
+            "activity_attributes": "峡谷地貌",
+            "activity_cost": "150.00",
+            "advanced_options": "安全设备"
+        },
+        {
+            "id": "7",
+            "activity_name": "温泉泡汤",
+            "activity_attributes": "瀑布温泉",
+            "activity_cost": "250.00",
+            "advanced_options": "按摩服务"
+        },
+        {
+            "id": "8",
+            "activity_name": "观景台摄影",
+            "activity_attributes": "观景平台",
+            "activity_cost": "50.00",
+            "advanced_options": "摄影点指南"
+        },
+        {
+            "id": "9",
+            "activity_name": "古迹导览",
+            "activity_attributes": "历史古迹",
+            "activity_cost": "60.00",
+            "advanced_options": "专家讲解"
+        },
+        {
+            "id": "10",
+            "activity_name": "博物馆参观",
+            "activity_attributes": "博物馆",
+            "activity_cost": "50.00",
+            "advanced_options": "语音导览"
+        },
+        {
+            "id": "11",
+            "activity_name": "寺庙祈福",
+            "activity_attributes": "宗教场所",
+            "activity_cost": "40.00",
+            "advanced_options": "香火服务"
+        },
+        {
+            "id": "12",
+            "activity_name": "古街漫步",
+            "activity_attributes": "文化街区",
+            "activity_cost": "30.00",
+            "advanced_options": "地图指南"
+        },
+        {
+            "id": "13",
+            "activity_name": "村落体验",
+            "activity_attributes": "传统村落",
+            "activity_cost": "80.00",
+            "advanced_options": "手工课程"
+        },
+        {
+            "id": "14",
+            "activity_name": "名人故居参观",
+            "activity_attributes": "名人故居",
+            "activity_cost": "40.00",
+            "advanced_options": "讲解服务"
+        },
+        {
+            "id": "15",
+            "activity_name": "考古遗址探索",
+            "activity_attributes": "考古遗址",
+            "activity_cost": "70.00",
+            "advanced_options": "专家讲解"
+        },
+        {
+            "id": "16",
+            "activity_name": "文化展览",
+            "activity_attributes": "文化展馆",
+            "activity_cost": "60.00",
+            "advanced_options": "导览服务"
+        },
+        {
+            "id": "17",
+            "activity_name": "特色小吃品尝",
+            "activity_attributes": "特色小吃",
+            "activity_cost": "100.00",
+            "advanced_options": "私人向导"
+        },
+        {
+            "id": "18",
+            "activity_name": "烹饪课程",
+            "activity_attributes": "地方菜系",
+            "activity_cost": "180.00",
+            "advanced_options": "食材包"
+        },
+        {
+            "id": "19",
+            "activity_name": "夜市巡游",
+            "activity_attributes": "夜市美食",
+            "activity_cost": "60.00",
+            "advanced_options": "小吃套餐"
+        },
+        {
+            "id": "20",
+            "activity_name": "老字号探访",
+            "activity_attributes": "农家乐",
+            "activity_cost": "120.00",
+            "advanced_options": "招牌菜"
+        },
+        {
+            "id": "21",
+            "activity_name": "咖啡馆打卡",
+            "activity_attributes": "网红餐厅",
+            "activity_cost": "50.00",
+            "advanced_options": "手冲体验"
+        },
+        {
+            "id": "22",
+            "activity_name": "茶文化体验",
+            "activity_attributes": "特色饮品",
+            "activity_cost": "80.00",
+            "advanced_options": "茶艺表演"
+        },
+        {
+            "id": "23",
+            "activity_name": "私房菜品鉴",
+            "activity_attributes": "传统糕点",
+            "activity_cost": "300.00",
+            "advanced_options": "定制菜单"
+        },
+        {
+            "id": "24",
+            "activity_name": "美食街逛吃",
+            "activity_attributes": "美食街",
+            "activity_cost": "50.00",
+            "advanced_options": "自由选择"
+        },
+        {
+            "id": "25",
+            "activity_name": "亲子手工制作",
+            "activity_attributes": "互动体验",
+            "activity_cost": "90.00",
+            "advanced_options": "材料包"
+        },
+        {
+            "id": "26",
+            "activity_name": "科普实验课",
+            "activity_attributes": "科普教育",
+            "activity_cost": "120.00",
+            "advanced_options": "实验器材"
+        },
+        {
+            "id": "27",
+            "activity_name": "主题乐园通票",
+            "activity_attributes": "主题乐园",
+            "activity_cost": "280.00",
+            "advanced_options": "快速通道"
+        },
+        {
+            "id": "28",
+            "activity_name": "动物园喂养体验",
+            "activity_attributes": "动物园",
+            "activity_cost": "70.00",
+            "advanced_options": "饲料包"
+        },
+        {
+            "id": "29",
+            "activity_name": "海洋馆潜水",
+            "activity_attributes": "水族馆",
+            "activity_cost": "200.00",
+            "advanced_options": "装备租赁"
+        },
+        {
+            "id": "30",
+            "activity_name": "儿童剧场演出",
+            "activity_attributes": "儿童剧场",
+            "activity_cost": "100.00",
+            "advanced_options": "亲子票"
+        },
+        {
+            "id": "31",
+            "activity_name": "农场采摘",
+            "activity_attributes": "亲子农场",
+            "activity_cost": "60.00",
+            "advanced_options": "采摘工具"
+        },
+        {
+            "id": "32",
+            "activity_name": "科技馆互动",
+            "activity_attributes": "科技馆",
+            "activity_cost": "150.00",
+            "advanced_options": "IMAX电影"
+        },
+        {
+            "id": "33",
+            "activity_name": "攀岩挑战",
+            "activity_attributes": "攀岩",
+            "activity_cost": "180.00",
+            "advanced_options": "专业教练"
+        },
+        {
+            "id": "34",
+            "activity_name": "高空跳伞",
+            "activity_attributes": "滑翔伞",
+            "activity_cost": "3000.00",
+            "advanced_options": "摄影服务"
+        },
+        {
+            "id": "35",
+            "activity_name": "皮划艇体验",
+            "activity_attributes": "漂流",
+            "activity_cost": "150.00",
+            "advanced_options": "安全装备"
+        },
+        {
+            "id": "36",
+            "activity_name": "山地自行车",
+            "activity_attributes": "骑行",
+            "activity_cost": "120.00",
+            "advanced_options": "车辆租赁"
+        },
+        {
+            "id": "37",
+            "activity_name": "丛林飞跃",
+            "activity_attributes": "徒步",
+            "activity_cost": "220.00",
+            "advanced_options": "专业设备"
+        },
+        {
+            "id": "38",
+            "activity_name": "滑雪课程",
+            "activity_attributes": "滑雪",
+            "activity_cost": "200.00",
+            "advanced_options": "雪具租赁"
+        },
+        {
+            "id": "39",
+            "activity_name": "潜水考证",
+            "activity_attributes": "潜水",
+            "activity_cost": "1500.00",
+            "advanced_options": "认证课程"
+        },
+        {
+            "id": "40",
+            "activity_name": "热气球体验",
+            "activity_attributes": "极限运动",
+            "activity_cost": "500.00",
+            "advanced_options": "飞行证书"
+        },
+        {
+            "id": "41",
+            "activity_name": "网红景点打卡",
+            "activity_attributes": "网红景点",
+            "activity_cost": "0.00",
+            "advanced_options": "摄影攻略"
+        },
+        {
+            "id": "42",
+            "activity_name": "建筑摄影工作坊",
+            "activity_attributes": "特色建筑",
+            "activity_cost": "150.00",
+            "advanced_options": "专业设备"
+        },
+        {
+            "id": "43",
+            "activity_name": "夜景拍摄指导",
+            "activity_attributes": "夜景",
+            "activity_cost": "120.00",
+            "advanced_options": "三脚架租赁"
+        },
+        {
+            "id": "44",
+            "activity_name": "人像摄影服务",
+            "activity_attributes": "人文景观",
+            "activity_cost": "300.00",
+            "advanced_options": "服装造型"
+        },
+        {
+            "id": "45",
+            "activity_name": "自然生态摄影",
+            "activity_attributes": "自然景观",
+            "activity_cost": "180.00",
+            "advanced_options": "长焦镜头"
+        },
+        {
+            "id": "46",
+            "activity_name": "城市风光摄影",
+            "activity_attributes": "观景台",
+            "activity_cost": "150.00",
+            "advanced_options": "全景拍摄"
+        },
+        {
+            "id": "47",
+            "activity_name": "复古风拍摄",
+            "activity_attributes": "特色街区",
+            "activity_cost": "200.00",
+            "advanced_options": "道具租赁"
+        },
+        {
+            "id": "48",
+            "activity_name": "星空摄影",
+            "activity_attributes": "日出日落",
+            "activity_cost": "150.00",
+            "advanced_options": "天文台"
+        },
+        {
+            "id": "49",
+            "activity_name": "延时摄影教学",
+            "activity_attributes": "人文景观",
+            "activity_cost": "200.00",
+            "advanced_options": "设备指导"
+        },
+        {
+            "id": "50",
+            "activity_name": "高端购物体验",
+            "activity_attributes": "购物中心",
+            "activity_cost": "0.00",
+            "advanced_options": "VIP服务"
+        },
+        {
+            "id": "51",
+            "activity_name": "特色市集",
+            "activity_attributes": "特色市场",
+            "activity_cost": "0.00",
+            "advanced_options": "特色商品"
+        },
+        {
+            "id": "52",
+            "activity_name": "休息体验区",
+            "activity_attributes": "休闲广场",
+            "activity_cost": "200.00",
+            "advanced_options": "精油选择"
+        },
+        {
+            "id": "53",
+            "activity_name": "免税商店",
+            "activity_attributes": "免税店",
+            "activity_cost": "150.00",
+            "advanced_options": "设计师服务"
+        },
+        {
+            "id": "54",
+            "activity_name": "怀旧商场",
+            "activity_attributes": "特色商店",
+            "activity_cost": "100.00",
+            "advanced_options": "甲油胶"
+        },
+        {
+            "id": "55",
+            "activity_name": "文创纪念点",
+            "activity_attributes": "文创街区",
+            "activity_cost": "30.00",
+            "advanced_options": "饮品套餐"
+        },
+        {
+            "id": "56",
+            "activity_name": "北京特产店",
+            "activity_attributes": "特产购物",
+            "activity_cost": "80.00",
+            "advanced_options": "VIP厅"
+        },
+        {
+            "id": "57",
+            "activity_name": "艺术展览参观",
+            "activity_attributes": "手工艺品",
+            "activity_cost": "60.00",
+            "advanced_options": "导览服务"
+        },
+        {
+            "id": "58",
+            "activity_name": "非遗手工艺体验",
+            "activity_attributes": "文化工作坊",
+            "activity_cost": "120.00",
+            "advanced_options": "传承人指导"
+        },
+        {
+            "id": "59",
+            "activity_name": "艺术区导览",
+            "activity_attributes": "艺术空间",
+            "activity_cost": "30.00",
+            "advanced_options": "自由参观"
+        },
+        {
+            "id": "60",
+            "activity_name": "小众景点探秘",
+            "activity_attributes": "当地市集",
+            "activity_cost": "80.00",
+            "advanced_options": "独家路线"
+        },
+        {
+            "id": "61",
+            "activity_name": "私人定制旅行",
+            "activity_attributes": "特色民宿",
+            "activity_cost": "500.00",
+            "advanced_options": "专属行程"
+        },
+        {
+            "id": "62",
+            "activity_name": "本地生活体验",
+            "activity_attributes": "社区探索",
+            "activity_cost": "40.00",
+            "advanced_options": "当地向导"
+        },
+        {
+            "id": "63",
+            "activity_name": "历史建筑内部参观",
+            "activity_attributes": "创意园区",
+            "activity_cost": "60.00",
+            "advanced_options": "专家讲解"
+        },
+        {
+            "id": "64",
+            "activity_name": "葡萄酒品鉴",
+            "activity_attributes": "手工艺坊",
+            "activity_cost": "150.00",
+            "advanced_options": "酒庄参观"
+        },
+        {
+            "id": "65",
+            "activity_name": "茶文化深度体验",
+            "activity_attributes": "特色体验",
+            "activity_cost": "100.00",
+            "advanced_options": "茶艺课程"
+        },
+        {
+            "id": "66",
+            "activity_name": "日出观赏",
+            "activity_attributes": "日出日落",
+            "activity_cost": "30.00",
+            "advanced_options": "观景平台"
+        },
+        {
+            "id": "67",
+            "activity_name": "夜景游览",
+            "activity_attributes": "夜景",
+            "activity_cost": "50.00",
+            "advanced_options": "灯光秀"
+        },
+        {
+            "id": "68",
+            "activity_name": "特色建筑参观",
+            "activity_attributes": "特色建筑",
+            "activity_cost": "60.00",
+            "advanced_options": "导览服务"
+        },
+        {
+            "id": "69",
+            "activity_name": "传统市集购物",
+            "activity_attributes": "当地市集",
+            "activity_cost": "0.00",
+            "advanced_options": "特色商品"
+        },
+        {
+            "id": "70",
+            "activity_name": "手工艺制作",
+            "activity_attributes": "手工艺坊",
+            "activity_cost": "100.00",
+            "advanced_options": "材料包"
+        },
+        {
+            "id": "71",
+            "activity_name": "特色民宿体验",
+            "activity_attributes": "特色民宿",
+            "activity_cost": "500.00",
+            "advanced_options": "早餐服务"
+        },
+        {
+            "id": "72",
+            "activity_name": "文化工作坊",
+            "activity_attributes": "文化工作坊",
+            "activity_cost": "80.00",
+            "advanced_options": "成品带走"
+        },
+        {
+            "id": "73",
+            "activity_name": "社区探索",
+            "activity_attributes": "社区探索",
+            "activity_cost": "40.00",
+            "advanced_options": "当地向导"
+        }
+    ]
+}
